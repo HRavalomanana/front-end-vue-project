@@ -15,6 +15,11 @@ npm run serve
 npm run build
 ```
 
+#### To test minified version on local : 
+```
+serve -s dist
+```
+
 ### Lints and fixes files
 ```
 npm run lint

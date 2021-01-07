@@ -1,0 +1,38 @@
+@import "variable";
+@import "breakpoints";
+
+@mixin RobotoReg {
+  font-family: "robotoregular";
+}
+@mixin MonserratReg {
+  font-family: "montserratregular";
+}
+@mixin MonserratLight {
+  font-family: "montserratlight";
+}
+
+@mixin MonserratMed {
+  font-family: "montserratmedium";
+}
+@mixin Button ($color : $red, $bg : $white ) {
+  color: $bg;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  border-radius: 30px;
+  background-color: $color;
+  padding: 12px 40px;
+  margin-top: 50px;
+  display: inline-block;
+  border: 2px solid $color;
+  box-sizing: border-box;
+  &:hover {
+    text-decoration: none;
+    color: $color;
+    background: $bg;
+  }
+}
+

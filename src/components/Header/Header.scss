@@ -1,0 +1,63 @@
+@import "../../assets/scss/mixins";
+
+/**Logo**/
+nav.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #ffffff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  .navbar-brand {
+    padding: 0;
+    margin-left: -1rem;
+  }
+}
+
+body.body {
+  @include RobotoReg();
+}
+
+/**Main nav**/
+.left-nav {
+  li.nav-item {
+    margin: 0 20px;
+  }
+}
+
+.right-nav {
+  li.nav-item {
+    margin: 0 5px !important;
+  }
+}
+
+.header-section {
+  .home-h1 {
+    font-size: 0;
+    color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+    &:hover, &:active, &:focus {
+      color: #d43d40;
+      border-color: #d43d40;
+      .fa {
+        color: #d43d40;
+      }
+    }
+  }
+}
+
+/**Social icon**/
+.fa {
+  font-size: 18px;
+  color: #353535;
+  transition: 0.3s all;
+}
