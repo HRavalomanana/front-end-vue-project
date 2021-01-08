@@ -1,3 +1,4 @@
+@import "../../assets/scss/variable";
 @import "../../assets/scss/mixins";
 
 /**Logo**/
@@ -20,12 +21,22 @@ body.body {
 .left-nav {
   li.nav-item {
     margin: 0 20px;
+    @include media-breakpoint-down(md) {
+      margin: 0 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      padding: 5px;
+    }
   }
 }
 
 .right-nav {
   li.nav-item {
     margin: 0 5px !important;
+  }
+  @include media-breakpoint-down(md) {
+    flex-direction: row!important;
+    justify-content: center;
+    padding-bottom: 20px;
   }
 }
 
@@ -36,23 +47,38 @@ body.body {
     margin: 0;
     padding: 0;
   }
-  .navbar-dark .navbar-nav .nav-link {
-    color: #000000;
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: normal;
-    line-height: normal;
-    text-align: center;
-    text-transform: uppercase;
-    &:hover, &:active, &:focus {
-      color: #d43d40;
-      border-color: #d43d40;
-      .fa {
+  .navbar-dark {
+    .navbar-nav .nav-link {
+      color: #000000;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: center;
+      text-transform: uppercase;
+      &:hover, &:active, &:focus {
         color: #d43d40;
+        border-color: #d43d40;
+        .fa {
+          color: #d43d40;
+        }
+      }
+      @include media-breakpoint-down(md) {
+        padding: 6px 0;
+        font-size: 16px;
       }
     }
+    .navbar-toggler {
+      color: #000000;
+      border-color: rgba(255, 255, 255, 0.1);
+      background: none;
+      font-family: "Fontawesome";
+      color: black;
+      font-size: 40px;
+    }
   }
+
 }
 
 /**Social icon**/

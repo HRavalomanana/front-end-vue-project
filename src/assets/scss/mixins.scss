@@ -29,6 +29,11 @@
   display: inline-block;
   border: 2px solid $color;
   box-sizing: border-box;
+  @include media-breakpoint-down(md) {
+    margin-top: 20px;
+    font-size: 19px;
+    padding: 9px 40px;
+  }
   &:hover {
     text-decoration: none;
     color: $color;

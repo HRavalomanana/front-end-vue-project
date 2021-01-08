@@ -12,11 +12,11 @@
     <div id="works">
         <Works />
     </div>
-    <div id="blog">
-        <HelloWorld msg="blog"/>
-    </div>
     <div id="contact">
-    <HelloWorld msg="contact"/>
+        <Contact />
+    </div>
+    <div id="footer">
+    <Footer/>
         </div>
   </div>
 </template>
@@ -27,7 +27,8 @@ import HomeSlider from './components/HomeSlider/HomeSlider';
 import About from './components/About/About';
 import Services from './components/Services/Services';
 import Works from './components/Works/Works';
-import HelloWorld from './components/HelloWorld';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
 export default {
   name: 'App',
@@ -37,7 +38,8 @@ export default {
     About,
     Services,
     Works,
-    HelloWorld
+    Contact,
+    Footer
   }
 }
 </script>

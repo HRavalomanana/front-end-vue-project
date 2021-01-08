@@ -1,0 +1,44 @@
+@import "../../assets/scss/variable";
+@import "../../assets/scss/mixins";
+
+.footer {
+  font-size: 14px;
+  color: $white;
+  background-color: #d43d40;
+  align-items: center;
+  padding: 15px 0;
+  @include MonserratLight;
+  .navbar {
+    background: none;
+    box-shadow: none;
+  }
+  .navbar-expand-lg {
+    justify-content: flex-end;
+    margin-right: 0;
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }
+  .nav-link {
+    color: $white !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    &:hover {
+      color: #000 !important;
+    }
+  }
+  .nav-item {
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+      padding: 5px 0;
+      text-decoration: underline;
+    }
+  }
+}
+
+.copyright {
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
+}

@@ -11,10 +11,17 @@
   margin-top: 40px;
   margin-bottom: 60px;
   display: inline-block;
+  @include media-breakpoint-down(md) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
   &:hover {
     text-decoration: none;
     color: $red;
   }
+}
+.hidden {
+  display: none;
 }
 
 .work-content {
@@ -94,16 +101,29 @@
   }
   .modal-body {
     padding: 30px;
+    @include media-breakpoint-down(md) {
+     padding: 20px;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 15px;
+    }
   }
   .modal-btn {
     margin-right: 20px;
-    margin-bottom: 20px;
     padding-top: 9px;
     padding-bottom: 9px;
     &.outline-red-btn {
       padding-top: 10px;
       padding-bottom: 10px;
     }
+    @include media-breakpoint-down(md) {
+      margin-right: 10px;
+    }
+  }
+}
+.modal-btn-wrapper {
+  @include media-breakpoint-down(md) {
+    text-align: center;
   }
 }
 
@@ -112,6 +132,9 @@
   @include MonserratMed;
   color: #000000;
   margin-bottom: 20px;
+  @include media-breakpoint-down(md) {
+    font-size: 24px;
+  }
 }
 
 .modal-desc {
@@ -119,6 +142,9 @@
   @include RobotoReg;
   color: #000000;
   margin-bottom: 50px;
+  @include media-breakpoint-down(md) {
+    font-size: 20px;
+  }
 }
 
 .modal-full-desc {
@@ -126,6 +152,10 @@
   @include RobotoReg;
   color: #000000;
   margin-bottom: 40px;
+  @include media-breakpoint-down(xl) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
   h4, h3, h2 {
     color: #323232;

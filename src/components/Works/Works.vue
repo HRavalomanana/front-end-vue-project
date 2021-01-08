@@ -1,8 +1,8 @@
+<!-- Works block -->
 <template>
     <div class="container-fluid">
-    <div class="row">
-
-        <div v-for="workData in WorksDataList" :key="workData.id" class="work-data col-md-3" v-on:click="getWorkId(workData.id)" v-b-modal.modal-info >
+        <div class="row">
+            <div v-for="workData in WorksDataList" :key="workData.id" class="work-data col-xl-3 col-md-4 col-xs-12" v-on:click="getWorkId(workData.id)" v-b-modal.modal-info >
 
                 <div class="work-content">
                     <h4 class="work-title">{{workData.title}}</h4>
@@ -11,20 +11,13 @@
                 <div class="work-image zoom-inner-img">
                     <img :src="workData.image" :alt="workData.title" :title="workData.title">
                 </div>
-
-
+            </div>
         </div>
-</div>
-<p class="text-center"><span  title="ALL OUR WORKS" class="read-more-works" v-on:click="getAllWorksData">ALL OUR WORKS</span></p>
-
-
-<WorkModal :item='OneWork' />
-
-
-</div>
-
-
-
+        <p class="text-center"><span  title="ALL OUR WORKS" class="read-more-works" v-on:click="getAllWorksData"  v-bind:class="{ hidden: isShown }">ALL OUR WORKS</span></p>
+        <p class="text-center"><span  title="ALL OUR WORKS" class="read-more-works" v-on:click="getWorksData"  v-bind:class="{ hidden: !isShown }">SHOW LESS WORKS</span></p>
+<!-- Works modal block -->
+        <WorkModal :item='OneWork' />
+    </div>
 </template>
 
 <script>
@@ -39,7 +32,8 @@ export default {
     data() {
         return {
             WorksDataList: [],
-            OneWork: []
+            OneWork: [],
+            isShown: false,  //to hide the button "all our works"
         };
     },
 
@@ -53,13 +47,16 @@ export default {
 
             fetch("/works.json")
                 .then(response => response.json())
-                .then(data => (this.WorksDataList = data.filter(res => res.id <= 8)));
+                .then(data => (this.WorksDataList = data.filter(res => res.id <= 8)))
+                .then(this.isShown = false);
         },
         getAllWorksData() {
             // Get All Works on the json file
             fetch("/works.json")
                 .then(response => response.json())
-                .then(data => (this.WorksDataList = data));
+                .then(data => (this.WorksDataList = data))
+                .then(this.isShown = true);
+
 
         },
         getWorkId(event) {

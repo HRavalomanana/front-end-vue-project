@@ -2,6 +2,9 @@
 .slider-section {
   margin-top: 80px;
   margin-bottom: 80px;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 10px;
+  }
   .owl-item {
     position: relative;
     &:before {
@@ -14,6 +17,26 @@
       width: 100%;
       height: 100%;
     }
+  }
+  .owl-theme .owl-nav [class*='owl-'] {
+    background: none;
+    color: transparent;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  .owl-prev {
+    left: 40px;
+      content: url('../../assets/images/icon-arrow-left.png');
+  }
+  .owl-next {
+    right: 40px;
+    content: url('../../assets/images/icon-arrow-right.png');
   }
 
 
@@ -37,29 +60,21 @@
   letter-spacing: normal;
   line-height: 60px;
   text-align: left;
+  @include media-breakpoint-down(md) {
+    text-align: center;
+    font-size: 40px;
+  }
 }
 
 .red-btn {
   @include Button;
 }
 
-.owl-nav {
-  & > div {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
-  }
-  .owl-prev {
-    left: 0;
-  }
-  .owl-next {
-    right: 0;
-  }
-}
-
 .owl-dots {
   display: none;
+  @include media-breakpoint-down(md) {
+    display: block;
+  }
 }
 .owl-carousel .owl-item img {
   height: 75vh;
